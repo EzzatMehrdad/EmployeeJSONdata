@@ -1,43 +1,84 @@
+var employeePromise=d3.json("employee.json");
 
-                $(document).ready(function () { 
-  
-                    $.getJSON("employee.json",  
-                            function (data) { 
-                        var student = ''; 
-  
-                        $.each(data, function (key, value) { 
-  
-                            student += '<tr>'; 
-                            student += '<td>' +  
-                                value.firstName + '</td>'; 
-  
-                            student += '<td>' +  
-                                value.lastName + '</td>'; 
-  
-                            student += '<td>' +  
-                                value.photo + '</td>'; 
-  
-                            student += '<td>' +  
-                                value.title + '</td>'; 
-                            
-                            student += '<td>' +  
-                                value.unit + '</td>'; 
-                            
-                            
-                            student += '<td>' +  
-                                value.email + '</td>'; 
-                            
-                            student += '<td>' +  
-                                value.bio + '</td>'; 
-                            
-                            
+var getFirstName=function(employee){
+    
+    return employee.firstName
+}
 
-  
-                            student += '</tr>'; 
-                        }); 
-                
-                        $('#table').append(student); 
-                    }); 
-                }); 
+var getLastName=function(employee)
+{
+    
+    return employee.lastName;
+}
+var getPics= function(employee)
+{
+    return employee.photo;
+    
+}
+var getTitle= function(employee)
+{
+    return employee.title;
+    
+}
 
+var getUnit= function(employee)
+{
+    return employee.unit;
+}
+
+var getEmail= function(employee)
+{
+    return employee.email;
+}
+
+var getBio= function(employee)
+{
+    return employee.bio;
+}
+
+var successFCN= function(employee)
+
+{
+    
+    var rows=d3.select("tbody")
+    .selectAll("tr")
+    .data(employee)
+    .enter()
+    .append("tr")
+    
+    rows.append("td")
+    .append("img")
+    .attr("src", getPics);
+    
+    rows.append("td")
+    .text(getFirstName);
+    
+    rows.append("td")
+    .text(getLastName); 
+    
+      rows.append("td")
+    .text(getTitle); 
+    
+    
+      rows.append("td")
+    .text(getUnit); 
+    
+    
+      rows.append("td")
+    .text(getEmail); 
+    
+      rows.append("td")
+    .text(getBio); 
+    
+    
+    
+
+}
+
+  var failFCN = function(errorMsg)
+  {
+    console.log("You Got it wrong",errorMSG);
+  }
+    
+     employeePromise.then(successFCN,failFCN);
 

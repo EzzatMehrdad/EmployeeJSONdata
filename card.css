@@ -1,0 +1,41 @@
+body{
+    background-color: beige;
+    
+    
+}
+
+h1{text-align: center;
+    
+    
+}
+.employee { margin-top: 40px; margin-left: auto; margin-right: auto; border-radius: 25px;  
+    
+    text-align: center;
+    background-color: white; border-color: burlywood; border: 3px; border-style:solid; border-color:burlywood;  width: 800px; height: 200px; 
+}
+
+.general {text-align: left;
+    
+}
+.eName{text-align: left; font-weight: bold; margin-top: 10px; float: left; margin-left: 20px;
+}
+img{
+    width: 150px; height: 150px; float: left; margin-left: 4px; clear: both;    
+}
+
+.title{ font-weight: bold;  float: left; margin-left: 15px; clear: right;  
+    
+    
+}
+.email{font-weight: bold;  float: right; margin-right: 10px;
+    
+    
+}
+.department{font-weight: bold; float: left; margin-left:auto; margin-left: 50px;
+    
+}
+
+.bio{ margin-bottom: 10; text-align: left;   clear: right; margin-left:20px; 
+    
+}
+
